@@ -24,6 +24,26 @@
   stroke-width: 3;
 }
 
+.second-segment {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.second-segment:hover {
+  filter: brightness(1.2);
+  stroke-width: 3;
+}
+
+.third-segment {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.third-segment:hover {
+  filter: brightness(1.2);
+  stroke-width: 3;
+}
+
 .inner-segment {
   cursor: pointer;
   transition: all 0.2s ease;
@@ -31,6 +51,16 @@
 
 .inner-segment:hover {
   filter: brightness(1.2);
+  stroke-width: 3;
+}
+
+.clickable-segment {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clickable-segment:hover {
+  filter: brightness(1.3);
   stroke-width: 3;
 }
 
