@@ -1,0 +1,72 @@
+.dartboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.dartboard svg {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  transition: transform 0.2s ease;
+}
+
+.dartboard svg:hover {
+  transform: scale(1.02);
+}
+
+.outer-segment {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.outer-segment:hover {
+  filter: brightness(1.2);
+  stroke-width: 3;
+}
+
+.inner-segment {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.inner-segment:hover {
+  filter: brightness(1.2);
+  stroke-width: 3;
+}
+
+.center-circle {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.center-circle:hover {
+  filter: brightness(1.2);
+  stroke-width: 4;
+}
+
+.segment-text {
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.center-text {
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+  .dartboard svg {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .segment-text {
+    font-size: 12px;
+  }
+  
+  .center-text {
+    font-size: 18px;
+  }
+}

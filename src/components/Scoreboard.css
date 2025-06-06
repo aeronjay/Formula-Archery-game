@@ -1,0 +1,79 @@
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-score {
+  text-align: center;
+  color: white;
+  flex: 1;
+}
+
+.team-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #4a5cff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(135deg, #4a5cff, #ff4757);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: brightness(1.2);
+}
+
+.vs-divider {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .scoreboard {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .team-name {
+    font-size: 1.2rem;
+  }
+  
+  .score {
+    font-size: 2.5rem;
+  }
+  
+  .vs-divider {
+    font-size: 1.5rem;
+    width: 60px;
+    height: 60px;
+  }
+}
