@@ -10,7 +10,8 @@ const Sidebar = ({
   setDartboardConfig,
   pointSystem,
   setPointSystem,
-  onResetDartboard
+  onResetDartboard,
+  onRestoreLastGame
 }) => {
   
   const handleTeamNameChange = (team, value) => {
@@ -68,27 +69,44 @@ const Sidebar = ({
           <h2>Settings</h2>
           <button className="close-btn" onClick={onClose}>×</button>
         </div>
-          <div className="sidebar-content">
-          {/* Reset Button */}
+          <div className="sidebar-content">          {/* Game Control Buttons */}
           <div className="settings-section">
-            <button 
-              className="reset-btn"
-              onClick={onResetDartboard}
-              style={{
-                width: '100%',
-                padding: '10px',
-                backgroundColor: '#ff4757',
-                color: 'white',
-                border: 'none',
-                borderRadius: '5px',
-                fontSize: '16px',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                marginBottom: '1rem'
-              }}
-            >
-              Reset Dartboard
-            </button>
+            <div style={{ display: 'flex', gap: '10px', marginBottom: '1rem' }}>
+              <button 
+                className="reset-btn"
+                onClick={onResetDartboard}
+                style={{
+                  flex: 1,
+                  padding: '10px',
+                  backgroundColor: '#ff4757',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '5px',
+                  fontSize: '14px',
+                  fontWeight: 'bold',
+                  cursor: 'pointer'
+                }}
+              >
+                Reset Game
+              </button>
+              <button 
+                className="restore-btn"
+                onClick={onRestoreLastGame}
+                style={{
+                  flex: 1,
+                  padding: '10px',
+                  backgroundColor: '#2ed573',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '5px',
+                  fontSize: '14px',
+                  fontWeight: 'bold',
+                  cursor: 'pointer'
+                }}
+              >
+                Restore Last
+              </button>
+            </div>
           </div>
 
           {/* Team Names Section */}
