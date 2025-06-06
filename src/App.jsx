@@ -25,13 +25,12 @@ function App() {
   return (
     <div className="app">
       <div className="app-content">
-        <header className="app-header">
+        <div className="header-scoreboard">
+          <Scoreboard teamNames={teamNames} />
           <button className="settings-btn" onClick={toggleSidebar}>
             ⚙️
           </button>
-        </header>
-        
-        <Scoreboard teamNames={teamNames} />
+        </div>
         
         <div className="dartboard-container">
           <Dartboard config={dartboardConfig} />

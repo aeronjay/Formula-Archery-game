@@ -6,7 +6,7 @@
 }
 
 .app-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
   min-height: 100vh;
@@ -17,6 +17,17 @@
   justify-content: flex-end;
   padding: 1rem 0;
   margin-bottom: 1rem;
+}
+
+.header-scoreboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  gap: 2rem;
+  position: relative;
+  width: 100%;
 }
 
 .settings-btn {
@@ -34,6 +45,10 @@
   backdrop-filter: blur(10px);
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .settings-btn:hover {

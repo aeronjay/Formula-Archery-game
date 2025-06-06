@@ -29,20 +29,19 @@ const Dartboard = ({ config }) => {
       id: `inner-${index}`
     }
   })
-
   const createSegmentPath = (innerRadius, outerRadius, startAngle, endAngle) => {
     const startAngleRad = (startAngle * Math.PI) / 180
     const endAngleRad = (endAngle * Math.PI) / 180
     
-    const x1 = 200 + innerRadius * Math.cos(startAngleRad)
-    const y1 = 200 + innerRadius * Math.sin(startAngleRad)
-    const x2 = 200 + outerRadius * Math.cos(startAngleRad)
-    const y2 = 200 + outerRadius * Math.sin(startAngleRad)
+    const x1 = 300 + innerRadius * Math.cos(startAngleRad)
+    const y1 = 300 + innerRadius * Math.sin(startAngleRad)
+    const x2 = 300 + outerRadius * Math.cos(startAngleRad)
+    const y2 = 300 + outerRadius * Math.sin(startAngleRad)
     
-    const x3 = 200 + outerRadius * Math.cos(endAngleRad)
-    const y3 = 200 + outerRadius * Math.sin(endAngleRad)
-    const x4 = 200 + innerRadius * Math.cos(endAngleRad)
-    const y4 = 200 + innerRadius * Math.sin(endAngleRad)
+    const x3 = 300 + outerRadius * Math.cos(endAngleRad)
+    const y3 = 300 + outerRadius * Math.sin(endAngleRad)
+    const x4 = 300 + innerRadius * Math.cos(endAngleRad)
+    const y4 = 300 + innerRadius * Math.sin(endAngleRad)
     
     const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1"
     
@@ -59,23 +58,22 @@ const Dartboard = ({ config }) => {
   const getTextPosition = (radius, angle) => {
     const angleRad = (angle * Math.PI) / 180
     return {
-      x: 200 + radius * Math.cos(angleRad),
-      y: 200 + radius * Math.sin(angleRad)
+      x: 300 + radius * Math.cos(angleRad),
+      y: 300 + radius * Math.sin(angleRad)
     }
   }
-
   return (
     <div className="dartboard">
-      <svg width="400" height="400" viewBox="0 0 400 400">
+      <svg width="600" height="600" viewBox="0 0 600 600">
         {/* Outer ring segments */}
         {outerSegments.map((segment) => {
           const midAngle = (segment.angle + segment.nextAngle) / 2
-          const textPos = getTextPosition(170, midAngle)
+          const textPos = getTextPosition(255, midAngle)
           
           return (
             <g key={segment.id}>
               <path
-                d={createSegmentPath(120, 200, segment.angle, segment.nextAngle)}
+                d={createSegmentPath(180, 300, segment.angle, segment.nextAngle)}
                 className="outer-segment"
                 fill="#2a2a4a"
                 stroke="#1a1a2e"
@@ -88,7 +86,7 @@ const Dartboard = ({ config }) => {
                 dominantBaseline="middle"
                 className="segment-text"
                 fill="white"
-                fontSize="16"
+                fontSize="20"
                 fontWeight="bold"
               >
                 {segment.value}
@@ -100,12 +98,12 @@ const Dartboard = ({ config }) => {
         {/* Inner ring segments */}
         {innerSegments.map((segment) => {
           const midAngle = (segment.angle + segment.nextAngle) / 2
-          const textPos = getTextPosition(85, midAngle)
+          const textPos = getTextPosition(128, midAngle)
           
           return (
             <g key={segment.id}>
               <path
-                d={createSegmentPath(50, 120, segment.angle, segment.nextAngle)}
+                d={createSegmentPath(75, 180, segment.angle, segment.nextAngle)}
                 className="inner-segment"
                 fill="#4a5cff"
                 stroke="#2a3fff"
@@ -118,7 +116,7 @@ const Dartboard = ({ config }) => {
                 dominantBaseline="middle"
                 className="segment-text"
                 fill="white"
-                fontSize="18"
+                fontSize="22"
                 fontWeight="bold"
               >
                 {segment.value}
@@ -129,22 +127,22 @@ const Dartboard = ({ config }) => {
         
         {/* Center circle (bullseye) */}
         <circle
-          cx="200"
-          cy="200"
-          r="50"
+          cx="300"
+          cy="300"
+          r="75"
           fill="#ff4757"
           stroke="#ff3838"
           strokeWidth="3"
           className="center-circle"
         />
         <text
-          x="200"
-          y="200"
+          x="300"
+          y="300"
           textAnchor="middle"
           dominantBaseline="middle"
           className="center-text"
           fill="white"
-          fontSize="24"
+          fontSize="32"
           fontWeight="bold"
         >
           {center}
