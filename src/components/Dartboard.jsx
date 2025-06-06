@@ -3,11 +3,17 @@ import './Dartboard.css'
 
 const Dartboard = ({ config, onSegmentClick, segmentStates }) => {
   const { center, thirdRing, secondRing, outerRing } = config
-
   const handleSegmentClick = (value, segmentType, index) => {
     if (onSegmentClick) {
       onSegmentClick(value, segmentType, index)
     }
+  }
+
+  const getCenterStroke = () => {
+    const state = segmentStates.center
+    if (state === 1) return '#cc2e3f' // Darker red for Team 1
+    if (state === 2) return '#e6c200' // Darker yellow for Team 2
+    return '#6d28d9' // Darker purple for unassigned
   }
 
   const getSegmentFill = (segmentType, index) => {
@@ -30,7 +36,7 @@ const Dartboard = ({ config, onSegmentClick, segmentStates }) => {
     if (segmentType === 'outer') return '#2a2a4a'
     if (segmentType === 'second') return '#3a3a5a'
     if (segmentType === 'third') return '#4a5cff'
-    if (segmentType === 'center') return '#ff4757'
+    if (segmentType === 'center') return '#8b5cf6' // Purple for unassigned center
     
     return '#2a2a4a'
   }
@@ -208,7 +214,7 @@ const Dartboard = ({ config, onSegmentClick, segmentStates }) => {
           cy="300"
           r="60"
           fill={getSegmentFill('center', 0)}
-          stroke="#ff3838"
+          stroke={getCenterStroke()}
           strokeWidth="3"
           className="center-circle clickable-segment"
           style={{ cursor: 'pointer' }}
