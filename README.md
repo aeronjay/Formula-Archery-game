@@ -1,6 +1,7 @@
 # Formula Archery - Dartboard Target Application
 
 A React-based archery/dartboard target application with customizable settings and team scoring.
+LIVE DEMO: https://formula-archery-game.vercel.app/
 
 ## Features
 
